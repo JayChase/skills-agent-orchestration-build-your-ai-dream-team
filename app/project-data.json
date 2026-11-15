@@ -1,0 +1,51 @@
+{
+  "projects": [
+    {
+      "name": "Contributor Welcome Kit",
+      "owner": "Mira Chen",
+      "status": "Active",
+      "recentActivity": "Tested the first-contribution checklist with three new volunteers and incorporated their feedback.",
+      "priority": "High",
+      "summary": "Make a first contribution feel approachable with clear steps and friendly examples."
+    },
+    {
+      "name": "Community Events Calendar",
+      "owner": "Theo Rivera",
+      "status": "At risk",
+      "recentActivity": "Drafted the next meetup schedule; two speaker confirmations are still needed before publication.",
+      "priority": "Medium",
+      "summary": "Bring upcoming contributor workshops and community gatherings into one shared calendar."
+    },
+    {
+      "name": "Documentation Search",
+      "owner": "Asha Patel",
+      "status": "Blocked",
+      "recentActivity": "Prepared search relevance tests. Work is waiting on approval for access to the documentation index.",
+      "priority": "High",
+      "summary": "Help contributors find the right guide without knowing its exact title."
+    },
+    {
+      "name": "Translation Starter Pack",
+      "owner": "Jonah Brooks",
+      "status": "On hold",
+      "recentActivity": "Saved the glossary draft and handoff notes while the volunteer review team is unavailable.",
+      "priority": "Low"
+    },
+    {
+      "name": "Issue Template Refresh",
+      "owner": "Leila Okafor",
+      "status": "Completed",
+      "recentActivity": "Published the revised bug report and feature request templates after accessibility review.",
+      "priority": "Medium",
+      "summary": "Ask for useful context while keeping issue reporting quick and welcoming."
+    },
+    {
+      "name": "Cross-team Contributor Knowledge Exchange and Long-term Mentorship Pilot",
+      "owner": "Sam Ellis and the contributor learning circle",
+      "status": "Active",
+      "recentActivity": "Shared a detailed pilot outline covering mentor introductions, asynchronous office hours, practical documentation exercises, and a feedback session. The next step is to gather suggestions from contributors across time zones before choosing a small first cohort.",
+      "priority": "Low",
+      "summary": "Create a sustainable space where new and experienced contributors can exchange knowledge, practice reviewing changes, and build confidence without requiring everyone to attend meetings at the same time."
+    }
+  ]
+}

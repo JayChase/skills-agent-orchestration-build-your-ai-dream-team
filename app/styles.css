@@ -1,0 +1,438 @@
+/* Project Pulse — local system fonts, no dependencies or motion.
+   Color is supplementary: status and priority always retain visible text. */
+:root {
+  color-scheme: light;
+  --canvas: #f3f6fa;
+  --surface: #ffffff;
+  --ink: #17243b;
+  --muted: #526078;
+  --line: #d9e1eb;
+  --navy: #152740;
+  --accent: #087568;
+  --radius: 1rem;
+  --shadow: 0 4px 16px rgb(21 39 64 / 6%), 0 1px 3px rgb(21 39 64 / 5%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Never let component display rules expose hidden loading/state content. */
+[hidden] {
+  display: none !important;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.dashboard {
+  width: min(100%, 80rem);
+  margin-inline: auto;
+  padding: clamp(1rem, 3vw, 3rem);
+  overflow-wrap: anywhere;
+}
+
+.dashboard-header {
+  position: relative;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid #263d59;
+  border-top: 4px solid #55d6bd;
+  border-radius: calc(var(--radius) + 0.25rem);
+  background: var(--navy);
+  color: #ffffff;
+  box-shadow: 0 10px 28px rgb(21 39 64 / 12%);
+}
+
+.dashboard-eyebrow {
+  margin-bottom: 0.75rem;
+  color: #a3ecdb;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.dashboard-title {
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  font-weight: 750;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+.dashboard-subtitle {
+  max-width: 62ch;
+  margin-top: 1rem;
+  color: #d5e0ee;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+.dashboard-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-block: 1.5rem 2.5rem;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  min-width: 0;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.summary-value {
+  color: var(--navy);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+
+.summary-label {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.projects-section {
+  min-width: 0;
+}
+
+.projects-heading {
+  margin-bottom: 1.25rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 750;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.section-description {
+  max-width: 70ch;
+  margin-top: 0.375rem;
+  color: var(--muted);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  align-items: stretch;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-grid > li {
+  display: flex;
+  min-width: 0;
+}
+
+.project-card {
+  --priority-accent: #64748b;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  min-width: 0;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--priority-accent);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.project-card--priority-high {
+  --priority-accent: #b4233b;
+}
+
+.project-card--priority-medium {
+  --priority-accent: #936000;
+}
+
+.project-card--priority-low {
+  --priority-accent: #087568;
+}
+
+.project-card--priority-unknown {
+  --priority-accent: #64748b;
+}
+
+.project-card-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.project-name {
+  flex: 1 1 12rem;
+  min-width: 0;
+  font-size: 1.1875rem;
+  font-weight: 750;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+}
+
+.status-badge,
+.priority-badge {
+  display: inline-block;
+  max-width: 100%;
+  padding: 0.25rem 0.625rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  background: #eef2f6;
+  color: #38465d;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.5;
+  vertical-align: middle;
+  white-space: normal;
+}
+
+.status-badge {
+  flex: 0 1 auto;
+}
+
+.status-badge--active {
+  border-color: #a8dbcd;
+  background: #e4f5ed;
+  color: #176044;
+}
+
+.status-badge--at-risk {
+  border-color: #edcf92;
+  background: #fff3d6;
+  color: #754600;
+}
+
+.status-badge--blocked {
+  border-color: #edb9c2;
+  background: #fce9ed;
+  color: #98233b;
+}
+
+.status-badge--on-hold {
+  border-color: #cec5e9;
+  background: #f1ecfa;
+  color: #5d408c;
+}
+
+.status-badge--completed {
+  border-color: #b9d2ef;
+  background: #eaf2fd;
+  color: #285795;
+}
+
+.status-badge--unknown,
+.priority-badge--unknown {
+  border-color: #cbd5e1;
+  background: #eef2f6;
+  color: #38465d;
+}
+
+.project-owner {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.project-summary {
+  color: #38465d;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+.project-activity {
+  /* Anchor activity and priority consistently even without a summary. */
+  margin-top: auto;
+  padding: 1rem;
+  border: 1px solid #e3e9f1;
+  border-radius: 0.625rem;
+  background: #f7f9fc;
+}
+
+.project-field-label {
+  margin-bottom: 0.375rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.project-field-value {
+  color: #38465d;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.project-priority {
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.priority-badge--high {
+  border-color: #edb9c2;
+  background: #fce9ed;
+  color: #98233b;
+}
+
+.priority-badge--medium {
+  border-color: #edcf92;
+  background: #fff3d6;
+  color: #754600;
+}
+
+.priority-badge--low {
+  border-color: #a8dbcd;
+  background: #e4f5ed;
+  color: #176044;
+}
+
+.dashboard-message {
+  margin-block: 0 1.25rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid #b9d2ef;
+  border-inline-start: 4px solid #285795;
+  border-radius: 0.75rem;
+  background: #eaf2fd;
+  color: #285795;
+  line-height: 1.65;
+}
+
+.dashboard-message--loading {
+  border-color: #b9d2ef;
+  border-inline-start-color: #285795;
+  background: #eaf2fd;
+  color: #285795;
+}
+
+.dashboard-message--error {
+  border-color: #edb9c2;
+  border-inline-start-color: #98233b;
+  background: #fce9ed;
+  color: #98233b;
+}
+
+.dashboard-message--empty {
+  border-color: #cbd5e1;
+  border-inline-start-color: #64748b;
+  background: #eef2f6;
+  color: #38465d;
+}
+
+.dashboard-message--warning {
+  border-color: #edcf92;
+  border-inline-start-color: #754600;
+  background: #fff3d6;
+  color: #754600;
+}
+
+.dashboard-footer {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+/* Defensive affordances for links supplied by integration, not clickable cards. */
+a {
+  color: #075f59;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+:focus-visible {
+  outline: 3px solid #075f59;
+  outline-offset: 4px;
+}
+
+.dashboard-header a {
+  color: #a3ecdb;
+}
+
+.dashboard-header :focus-visible {
+  outline-color: #a3ecdb;
+}
+
+@media (max-width: 40rem) {
+  .dashboard-summary {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .summary-item {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .summary-value {
+    flex: 0 0 auto;
+    min-width: 2ch;
+  }
+
+  .summary-label {
+    flex: 1 1 10rem;
+  }
+
+  .project-card {
+    padding: 1.25rem;
+  }
+}
+
+@media (forced-colors: active) {
+  .dashboard-header,
+  .summary-item,
+  .project-card,
+  .project-activity,
+  .dashboard-message,
+  .status-badge,
+  .priority-badge {
+    border-color: CanvasText;
+    box-shadow: none;
+  }
+
+  :focus-visible,
+  .dashboard-header :focus-visible {
+    outline-color: Highlight;
+  }
+}
